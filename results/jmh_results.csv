@@ -1,0 +1,5 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99,9%)","Unit","Param: inputPath"
+"org.example.benchmark.MSTBenchmark.runBenchmark","avgt",1,5,"0,697773","0,010236","ms/op",data/small_input.json
+"org.example.benchmark.MSTBenchmark.runBenchmark","avgt",1,5,"4,490134","0,067947","ms/op",data/medium_input.json
+"org.example.benchmark.MSTBenchmark.runBenchmark","avgt",1,5,"13,152619","0,948319","ms/op",data/large_input.json
+"org.example.benchmark.MSTBenchmark.runBenchmark","avgt",1,5,"5,785142","0,128120","ms/op",data/extra_large_input.json
