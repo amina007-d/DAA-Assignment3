@@ -29,7 +29,7 @@ public class Edge implements Comparable<Edge> {
 
     @Override
     public String toString() {
-        return String.format("%s-%s(%.2f)", from, to, weight);
+        return String.format("%s-%s(%d)", from, to, weight);
     }
 
     @Override
