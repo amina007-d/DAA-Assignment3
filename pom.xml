@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>DAA-Assignment3</artifactId>
+    <artifactId>assignment3-mst</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Assignment 3 - Minimum Spanning Tree</name>
 
@@ -14,9 +14,11 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <junit.version>5.10.0</junit.version>
         <gson.version>2.10.1</gson.version>
         <commons.csv.version>1.10.0</commons.csv.version>
+        <jmh.version>1.37</jmh.version>
     </properties>
 
     <dependencies>
@@ -38,10 +40,24 @@
             <artifactId>commons-csv</artifactId>
             <version>${commons.csv.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -62,13 +78,15 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>org.example.Main</mainClass>
+                                    <mainClass>org.openjdk.jmh.Main</mainClass>
                                 </transformer>
                             </transformers>
+                            <finalName>benchmarks</finalName>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>
